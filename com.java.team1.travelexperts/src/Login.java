@@ -47,7 +47,7 @@ public class Login extends HttpServlet {
 			Class.forName(this.getServletContext().getInitParameter("driver"));
 			Connection conn 
 			= DriverManager.getConnection("jdbc:mysql://localhost:3306/TravelExperts",
-					"root", "password");
+					"root", "");
 			Statement stmt = conn.createStatement();
 			String sql = "select userid, password from Customers where userid='"
 					+ request.getParameter("userid") + "'";
@@ -58,7 +58,8 @@ public class Login extends HttpServlet {
 				if (rs.getString(2).equals(request.getParameter("password")))
 				{
 					//valid login
-					response.sendRedirect("http://cbc.ca");
+					//response.sendRedirect("http://cbc.ca");
+					response.sendRedirect("Login.jsp");
 				}
 				else
 				{
@@ -66,7 +67,8 @@ public class Login extends HttpServlet {
 					HttpSession session = request.getSession(true);
 					session.setAttribute("message", "Invalid Password");
 					session.setAttribute("userid", request.getParameter("userid"));
-					response.sendRedirect("LoginForm.jsp");
+					//response.sendRedirect("LoginForm.jsp");
+					response.sendRedirect("index.jsp");
 				}
 			}
 			else

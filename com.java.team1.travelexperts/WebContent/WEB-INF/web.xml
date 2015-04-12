@@ -9,4 +9,28 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <context-param>
+  	<param-name>driver</param-name>
+  	<param-value>com.mysql.jdbc.Driver</param-value>
+  </context-param>
+  <servlet>
+  	<description></description>
+  	<display-name>Login</display-name>
+  	<servlet-name>Login</servlet-name>
+  	<servlet-class>Login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Login</servlet-name>
+  	<url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+    <servlet>
+  	<description></description>
+  	<display-name>TravelExperts</display-name>
+  	<servlet-name>TravelExperts</servlet-name>
+  	<servlet-class>TravelExperts</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>TravelExperts</servlet-name>
+  	<url-pattern>/TravelExperts</url-pattern>
+  </servlet-mapping>
 </web-app>
