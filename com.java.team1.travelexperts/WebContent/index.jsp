@@ -69,7 +69,6 @@
             <li class="home"><a href="Index.jsp">Home</a></li>
             <li class="package"><a href="Package.jsp">Packages</a></li>
             <li class="about"><a href="About.jsp">About</a></li>
-            <li class="blog"><a href="#">Blog</a></li>
             <li class="contact"><a href="Contact.jsp">Contact</a></li>
           </ul>
         </div>
@@ -143,7 +142,7 @@
                                         </select>
                                     </div>
                                     <div style="display: inline-block; width: 45%;">
-                                        Children (0-7)
+                                        Children (0-6)
                                         <select id="num_children" class="dropdown" style="width: 60px;">
                                             <option value="0">0</option>
                                             <option value="1">1</option>
