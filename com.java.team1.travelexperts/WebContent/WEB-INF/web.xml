@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" 
+	id="WebApp_ID" version="3.1">
   <display-name>com.java.team1.travelexperts</display-name>
   <welcome-file-list>
 <!-- 	<welcome-file>index.html</welcome-file>
@@ -10,27 +13,35 @@
     <welcome-file>default.jsp</welcome-file> -->
   </welcome-file-list>
   <context-param>
-  	<param-name>driver</param-name>
-  	<param-value>com.mysql.jdbc.Driver</param-value>
+    <param-name>driver</param-name>
+    <param-value>com.mysql.jdbc.Driver</param-value>
   </context-param>
   <servlet>
-  	<description></description>
-  	<display-name>Login</display-name>
-  	<servlet-name>Login</servlet-name>
-  	<servlet-class>Login</servlet-class>
+    <description></description>
+    <display-name>Login</display-name>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>Login</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>Login</servlet-name>
-  	<url-pattern>/Login</url-pattern>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TravelExperts</display-name>
+    <servlet-name>TravelExperts</servlet-name>
+    <servlet-class>TravelExperts</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TravelExperts</servlet-name>
+    <url-pattern>/TravelExperts</url-pattern>
   </servlet-mapping>
     <servlet>
-  	<description></description>
-  	<display-name>TravelExperts</display-name>
-  	<servlet-name>TravelExperts</servlet-name>
-  	<servlet-class>TravelExperts</servlet-class>
+    <servlet-name>CustomerServlet</servlet-name>
+    <servlet-class>com.java.team1.travelexperts.CustomerServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>TravelExperts</servlet-name>
-  	<url-pattern>/TravelExperts</url-pattern>
+    <servlet-name>CustomerServlet</servlet-name>
+    <url-pattern>/Customer</url-pattern>
   </servlet-mapping>
 </web-app>
