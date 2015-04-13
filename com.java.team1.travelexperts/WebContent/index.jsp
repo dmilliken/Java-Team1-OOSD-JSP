@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="ISO-8859-1"%>
 <%!
    private String message;
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 
@@ -286,7 +286,7 @@ Google Font Code
                         <p>Car and hotel bookings are included on some packages to give you ease and peace of mind.</p>
                         <strong><i class="fa fa-star"></i> POPULAR DESTINATIONS</strong><br>
                         <p>Popular destinations are added daily so be sure to check back often.</p><br>
-                        <p>The Travel Experts aims to be your discount travel package and booking company. Email us at <a href="#"><u>info@travelexperts.com</u></a> for more information.</p>
+                        <p>The Travel Experts aims to be your discount travel package and booking company. Email us at <a href="#">info@travelexperts.com</a> for more information.</p>
                     </div>
                     <div class="col-xs-12 col-md-8 main_img">
                         <h3><strong>FEATURED PACKAGES</strong></h3>
