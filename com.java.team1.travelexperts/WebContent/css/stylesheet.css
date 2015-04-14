@@ -2,7 +2,7 @@
 Author Name: John Nguyen
 Creation Date: November 4th, 2014
 Course: OOSD Fall 2014
-Description: The stylesheet for the entire Travel Experts website including the design and format for each webpage (Index.jsp, Login.jsp, customer.jsp, and Print.jsp)
+Description: The stylesheet for the entire Travel Experts website including the design and format for each webpage (index.php, registration.php, packages.php, customer.php, contact.php, header.php, and footer.php)
 */
 
 @charset "UTF-8";
@@ -450,137 +450,6 @@ p.label {
     padding: 10px;
 }
 
-/****************** Packages Page *********************/
-
-.pkg {
-    border-top-right-radius: 12px;
-    border-bottom-left-radius: 28px;
-    margin: 0px;
-    padding: 0px;
-    height: 230px;
-}
-.pkg:hover {
-    -moz-box-shadow:    0 0 5px 1px rgba(0, 0, 0, 0.5);
-    -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
-    box-shadow:         0 0 5px 1px rgba(0, 0, 0, 0.5); 
-}
-.pkg_title {
-    width: auto;
-    height: auto;
-    background-color: rgba(31, 91, 160, 0.9);
-    margin: 0 -2px 0 0;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 12px;
-    padding: 6px;
-    border-bottom: 3px solid #fff;
-    
-}
-.pkg_title h2 {
-    color: #fff;
-    margin-left: 10px;
-    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
-    padding-top: 3px;
-    
-}
-.pkg_image {
-    display: inline-block;
-    width: 296px;
-    height: auto;
-    padding: 0px;
-    margin: 0px;
-    float: left;
-    border-right: 3px solid #fff;
-}
-.pkg_image img {
-    width: inherit;
-    height: auto;
-    border-bottom-left-radius: 28px;
-}
-.pkg_desc {
-    display: block;
-    position: relative;
-    padding: 0;
-    margin-left: 296px;
-}
-.pkg_desc_box {
-    height: 70px;
-    padding: 5px 20px 5px 10px;
-    margin-bottom: 10px;
-    text-overflow: ellipsis;
-    text-overflow: hidden;
-}
-.pkg_table {
-    display: block;
-    padding: 0;
-    width: 60%;
-}
-.pkg_table table {
-    width: 99%;
-    border-collapse: separate;
-    border-spacing: 0;
-    border: 1px solid #ccc;
-}
-.pkg_table table th, .pkg_desc table td {
-    padding: 1px 10px;
-    border: 1px solid #ccc;
-    height: 27px;
-    text-align: center;
-}
-.pkg_table table th {
-    background-color: #555;
-    color: #fff;
-}
-.pkg_table table tr:last-child td:first-child {
-    border-bottom-left-radius: 0px;
-    }
-.pkg_day {
-    color: rgb(222, 55, 55);
-    font-size: 30px;
-    font-weight: 600;
-}
-.pkg_price {
-    position: relative;
-    float: right;
-    top: 22px;
-    right: 20px;
-    text-align: center;
-    margin-left: 40px;
-}
-.pkg_price span {
-    font-size: 52px;  
-    font-weight: 600;
-    color: rgb(222, 55, 55);
-}
-.pkg_book {
-    position: relative;
-    right: 20px;
-    top: -64px;
-    width: auto;
-    height: auto;
-    float: right;
-    text-align: left;
-    background-color: rgba(31, 91, 160, 0.9);
-    color: #fff;
-    border-radius: 5px;
-    padding: 6px 10px;
-    font-size: 16px;
-    border: 1px solid #999;
-    -moz-box-shadow:    1px 1px 6px 1px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.5);
-    box-shadow:         1px 1px 4px 1px rgba(0, 0, 0, 0.5);
-}
-.pkg_book:hover {
-    cursor: pointer;
-    background-color: rgb(39, 85, 142);
-}
-.book_arrow {
-    border-left: 1px solid rgba(255, 255, 255, 0.5);   
-    padding: 4px 0 4px 10px;
-}
-.packages hr {
-    margin: 12px;
-}
-
 /****************** Bookings Page *********************/
 .bookings .style {
     margin: 0 15px;
@@ -677,96 +546,62 @@ p.label {
     padding: 1px 3px;
 }
 
-/****************** Contact Page *********************/
+/****************** Customer Page *********************/
 .current_bookings {
     margin-bottom: 40px;
 }
-.current_bookings table, .previous_bookings table {
+.current_bookings .sort, .previous_bookings .sort {
     border: 1px solid #ccc;
     width: 100%;
     margin-top: 10px;
 }
-.current_bookings tr th, .previous_bookings tr th {
+.booking_title_main tr th {
     padding: 6px 2px 6px 10px;
     margin: 0;
     background-color: #555;
     color: #fff;  
 }
-.current_bookings tr td, .previous_bookings tr td {
+.current_bookings tr td, .booking_item tr td {
     margin: 0;
     padding: 10px 10px 12px 10px;
     font-size: 14px;
 }
-.current_bookings tr:nth-child(odd), .previous_bookings tr:nth-child(odd) {
+/*.current_bookings tr:nth-child(odd), .previous_bookings tr:nth-child(odd) {
     background-color: #ddd;
+}*/
+
+table.sort {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: none;
 }
 
+.selected_title {
+    background-color: #c1d9ff;
+    cursor: pointer;
+    font-weight: bold;
+}
 
+.selected_item {
+    background-color: white;
+}
 
-/****************** Contact Page *********************/
-.about {
-    padding: 5px 10px;
-    margin: 5px 0 30px 0;
+.booking_item {
+    width: 100%; 
+    border: 1px solid transparent;
 }
-span.agency_title {
-    display: inline-block;
-    position: relative;
-    left: 200px;
-}   
-span.agents_title {
-    display: inline-block;
-    position: relative;
-    left: 400px;
-}
-.agency {
-    overflow: auto;
-    clear: both;
-    display: block;
-    height: 100%;
-    width: 100%;
-    padding: 0;
-    margin: 5px 0;
-    vertical-align: top;
-}
-.agency_map {
-    display: inline-block;
-    height: auto;
-    max-width: 280px;
-    padding: 0px;
-}
-.agency_address {
-    display: inline-block;
-    height: 100%;
-    min-width: 200px;
-    vertical-align: top;
-    padding: 10px;
-    margin: 0px;
-    border-left: 1px solid #ccc;
-}
-.agency_address h3, .agents_list h3 {
-    margin: 0px 0px -5px 10px;
-}
-.agency_address td, .agent td {
-    padding: 1px 6px;
+
+.booking_title th {
     margin: 0;
-}
-.agents_list {
-    display: inline-block;
-    padding: 10px;
-    height: 100%;
-    min-width: 400px;
-    vertical-align: top;
-    border-left: 1px solid #ccc;
+    width: 100%;   
+    padding: 10px 10px 12px 10px;
 }
 
-.agent {
-    padding: 8px 0;
-    border-bottom: 1px solid #ccc;
-    
-}
-.agent h3 {
-    display: inline;
-}
-    
+.booking_details th {
 
+}
 
+.fa-ellipsis-v {
+    text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
+    color: #fff;
+}
