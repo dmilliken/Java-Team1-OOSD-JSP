@@ -33,41 +33,7 @@ public class CustomerServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
 		doPost(request, response);
-		
-//		System.out.println("Customer Servlet Get Fired");
-//		Connection conn = TravelExpertsDB.getConnection();
-//		PreparedStatement stmt;
-//		Customer c = new Customer();
-//		try {
-//			String user = request.getParameter("customerId");
-//			System.out.println(user);
-//			stmt = conn.prepareStatement("Select * from Customers where CustomerId='"
-//					+ user + "'");
-//			//stmt.setInt(1,104);
-//			ResultSet rs = stmt.executeQuery();
-//			if (rs.next()) {
-//				c.setCustomerId(rs.getInt("CustomerId"));
-//				c.setCustFirstName(rs.getString("CustFirstName"));
-//				c.setCustLastName(rs.getString("CustLastName"));
-//				c.setCustAddress(rs.getString("CustAddress"));
-//				c.setCustCity(rs.getString("CustCity"));
-//				c.setCustProv(rs.getString("CustProv"));
-//				c.setCustPostal(rs.getString("CustPostal"));
-//				c.setCustCountry(rs.getString("CustCountry"));
-//				c.setCustHomePhone(rs.getString("CustHomePhone"));
-//				c.setCustBusPhone(rs.getString("CustBusPhone"));
-//				c.setCustEmail(rs.getString("CustEmail"));
-//			}
-//		} catch (SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		request.setAttribute("cust",c);
-//		RequestDispatcher rd = request.getRequestDispatcher("customer.jsp");  
-//		rd.forward(request, response);
-		//response.sendRedirect("Customer"); 
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -76,6 +42,8 @@ public class CustomerServlet extends HttpServlet {
 		Connection conn = TravelExpertsDB.getConnection();
 		PreparedStatement stmt;
 		Customer c = new Customer();
+        Booking b = new Booking();
+		Package p = new Package();
 		try {
 			String user = (String) request.getAttribute("customerId");
 			if (user != null) {
@@ -96,8 +64,19 @@ public class CustomerServlet extends HttpServlet {
 					c.setCustHomePhone(rs.getString("CustHomePhone"));
 					c.setCustBusPhone(rs.getString("CustBusPhone"));
 					c.setCustEmail(rs.getString("CustEmail"));
+                    b.setBookingId(rs.getInt("BookingId"));
+                    b.setBookingDate(rs.getDate("BookingDate"));
+                    b.setBookingNo(rs.getString("BookingNo"));
+                    b.setTravelerCount(rs.getString("TravelerCount"));
+                    b.setCustomerId(rs.getInt("CustomerId"));
+                    b.setTripTypeId(rs.getString("TripTypeId"));
+                    b.setPackageId(rs.getInt("PackageId"));
+                    p.setPkgDesc(rs.getString("PkgDesc"));
+                    p.setPkgName(rs.getString("PkgName"));
 				}
 				request.setAttribute("cust",c);
+                request.setAttribute("booking",b);
+                request.setAttribute("pkg",p);      
 				RequestDispatcher rd = request.getRequestDispatcher("customer.jsp");  
 				rd.forward(request, response);
 				//response.sendRedirect("customer.jsp");
