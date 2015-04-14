@@ -25,60 +25,21 @@
 <!-- Google Font Code -->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600,400|Ek+Mukta:400,600,700|Sintony:700' rel='stylesheet' type='text/css'>
 
-<title>Travel Experts Inc. | Registration</title>
+<title>Travel Experts Inc. | Login</title>
 
 </head>
 <body>
-	<!-- <div class="jumbotron">
-        <h1>TRAVEL EXPERTS</h1>
-        <p class="lead">We are committed to offering travel services of the highest quality, combining our energy and enthusiasm, with over 50 years of experience.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Check your orders</h2>
-            <p>
-                The delivery experts at Domino's have specifically engineered Domino's Tracker® to keep you 
-                up to date on the status of your order from the moment it's prepared to the second it leaves our store for delivery.
-            </p>
-            <p>
-                <a class="btn btn-default" href="Customer.aspx">Go! &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Visit our Blog</h2>
-            <p>
-                The delivery experts at Domino's have specifically engineered Domino's Tracker® to keep you 
-                up to date on the status of your order from the moment it's prepared to the second it leaves our store for delivery.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301949">Go! &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Visit our Gallery/Password</h2>
-            <p>
-                The delivery experts at Domino's have specifically engineered Domino's Tracker® to keep you 
-                up to date on the status of your order from the moment it's prepared to the second it leaves our store for delivery.
-            </p>
-            <p>
-                <a class="btn btn-default" href="PasswordReset.aspx">Go! &raquo;</a>
-            </p>
-        </div>
-    </div> -->
-    
     <div class="header_wrap">
        <div class="header">
-       <div class="logo"><a href="Index.jsp"><img src="Images/logo.png" class="img-responsive"></a></div>
+       <div class="logo"><a href="Index"><img src="Images/logo.png" class="img-responsive"></a></div>
        <div class="nav" id="dropmenu">
            <ul>
-               <li class="home"><a href="Index.jsp"><i class="fa fa-home fa-lg"></i></a></li>
+               <li class="home"><a href="Index"><i class="fa fa-home fa-lg"></i></a></li>
                <li><a href="packages.php">&nbsp;<i class="fa fa-plane"></i> &nbsp;Vacations&nbsp;</a></li>
                  <li><i class='fa fa-sign-in'></i> &nbsp;Login&nbsp;&nbsp;&nbsp;
                      <ul>
-                         <li class='active_nav'><a href='Login.jsp'><i class='fa fa-sign-in'></i> &nbsp;Login&nbsp;&nbsp;&nbsp;</a></li>
-                         <li class='logout'><a href='logout.php'><i class='fa fa-sign-out'></i> &nbsp;Logout</a></li>
+                         <li class='active_nav'><a href='Login'><i class='fa fa-sign-in'></i> &nbsp;Login&nbsp;&nbsp;&nbsp;</a></li>
+                         <li class='logout'><a href='logout'><i class='fa fa-sign-out'></i> &nbsp;Logout</a></li>
                      </ul>
                  </li>                    
                <li><a href="contact.php">&nbsp;<i class="fa fa-info-circle"></i> &nbsp;About Us&nbsp;</a></li>
@@ -120,41 +81,28 @@
                     <div class="style col-xs-11 col-sm-4" style="margin: 5px 10px;">
                         <!-- BEGIN Login Form //-->
                         <h1><i class="fa fa-sign-in"></i> Login</h1><hr class="style-one">
-                        <!--  <?php
-                            if (isset($message)) {
-                                print("$message");	// It displays a message when the user does not put in their proper login information
-                            }
-                        ?>  -->
 						<!-- this from access from user table -->
-                        <form name="login" method="post" class="form-horizontal" role="form" >
+                        <form name="login" method="post" class="form-horizontal" action="Login" >
                             <div class="form-group">
                                 <label for="login_email" class="col-sm-4 control-label">Email</label>
                                 <div class="col-sm-8">
-                                    <input type="text" name="login_email" class="form-control" id="login_email"  placeholder="Email Address">
+                                    <input type="text" name="userid" class="form-control" id="login_email"  placeholder="Email Address">
 									<span id="loginemailError" style="display:none">You must enter your Email address.</span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="login_password" class="col-sm-4 control-label">Password</label>
                                 <div class="col-sm-8">
-                                    <input type="password" name="login_pass" class="form-control" id="login_password"  placeholder="Password">
+                                    <input type="password" name="password" class="form-control" id="login_password"  placeholder="Password">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-12" style="text-align: center;">
-                                    <button type="submit" class="btn btn-primary">Sign in and Continue</button>
+                                    <input type="submit" class="btn btn-primary" value="Sign In and Continue" />
                                     <p style="margin: 15px 0 -15px 0; color: rgba(47, 115, 193, 1); text-decoration: underline; "><a href="">Forgot password?</a></p> <!-- href="forgot_pass.php" -->
                                 </div>
                             </div>
                         </form><br>
-                        <!-- END Login Form //-->
-                        <!--  <?php
-                            if (isset($phpmessage)) {
-                                print("<hr class='style-one'>");
-                                print("<h2 style='color: #e35152';><i class='fa fa-exclamation-triangle'></i> WARNING</h2>");
-                                print("<span style='color: #e35152;'><em>$phpmessage</em></span>");	// It displays a message when the user does not put in their proper registration information
-                            }
-                        ?>  -->
                     </div>
                     <div class="style col-xs-11 col-sm-7" style="margin: 5px 10px;">
                         <h1><i class="fa fa-pencil-square-o"></i> Create an Account</h1>

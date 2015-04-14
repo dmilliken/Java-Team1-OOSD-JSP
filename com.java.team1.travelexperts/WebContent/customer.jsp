@@ -29,12 +29,12 @@
     <body>
         <div class="header_wrap">
             <div class="header">
-            <div class="logo"><a href="index.php"><img src="Images/logo.png" class="img-responsive"></a></div>
+            <div class="logo"><a href="Index"><img src="Images/logo.png" class="img-responsive"></a></div>
             <div class="nav" id="dropmenu">
                 <ul>
-                    <a href="#"><li class="home"><i class="fa fa-home fa-lg"></i></li></a>
-                    <a href="#"><li>&nbsp;<i class="fa fa-plane"></i> &nbsp;Vacations&nbsp;</li></a>
-                    <a href="#"><li>&nbsp;<i class="fa fa-info-circle"></i> &nbsp;About Us&nbsp;</li></a>
+                    <li class="home"><a href="Index"><i class="fa fa-home fa-lg"></i></a></li>
+                    <li><a href="#">&nbsp;<i class="fa fa-plane"></i> &nbsp;Vacations&nbsp;</a></li>
+                    <li><a href="#">&nbsp;<i class="fa fa-info-circle"></i> &nbsp;About Us&nbsp;</a></li>
                 </ul>
             </div>
             <div class="nav_mobile" onclick="dropMenu('dropmenu');">
@@ -153,7 +153,7 @@
         </div>
         <div id="footer">
             <p>Copyright &copy; 2014 Travel Experts Inc. All rights reserved.</p>
-            <a href="index.php">Home</a> | <a href="#">Privacy Policy</a><br><br>
+            <a href="Index">Home</a> | <a href="#">Privacy Policy</a><br><br>
             <span class="socialmedia"><img src="Images/icons/fb_icon.png"> <img src="Images/icons/twitter_icon.png"> <img src="Images/icons/linkedin_icon.png"> <img src="Images/icons/googleplus_icon.png"></span>
         </div>
         <a href="#top" class="top"><i class="fa fa-arrow-up fa-lg"></i></a>
