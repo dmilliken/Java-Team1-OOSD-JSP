@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -40,7 +39,6 @@ public class CustomerServlet extends HttpServlet {
 		String user = (String) request.getAttribute("customerId");
 		if (user == null)
 			user = "143";
-		
 		try {
 			stmt = conn.prepareStatement("SELECT * FROM customers WHERE CustomerId='" + user + "'");
 			ResultSet rs = stmt.executeQuery();
@@ -92,7 +90,7 @@ public class CustomerServlet extends HttpServlet {
 		request.setAttribute("cust",c);
 		request.setAttribute("booking",bookingList);
 		request.setAttribute("pkg",packageList);
-		RequestDispatcher rd = request.getRequestDispatcher("customer.jsp");  
+		RequestDispatcher rd = request.getRequestDispatcher("Customer.jsp");  
 		rd.forward(request, response);  
 	}
 	

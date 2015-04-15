@@ -76,7 +76,6 @@ a, a:hover, a:focus {
     display: inline-block;
     position: relative;
     padding: 10px 15px;
-    font-size: 1.2em;
     font-weight: 500;
     background-color: rgba(47, 115, 193, 0);
     color: #fff;
@@ -578,9 +577,14 @@ table.sort {
     cursor: pointer;
 }
 
+.clicked_title {
+	border-bottom: 1px solid #ccc;
+}
+
 .selected_item {
     background-color: #fff;
 }
+
 
 .booking_item {
     width: 100%; 
@@ -591,6 +595,7 @@ table.sort {
     margin: 0;
     width: 100%;   
     padding: 10px 10px 12px 10px;
+    font-weight: bold;
 }
 
 .fa-ellipsis-v {

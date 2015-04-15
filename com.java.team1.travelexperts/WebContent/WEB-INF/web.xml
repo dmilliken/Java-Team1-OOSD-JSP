@@ -12,7 +12,7 @@
     <description></description>
     <display-name>Index</display-name>
     <servlet-name>Index</servlet-name>
-    <servlet-class>Index</servlet-class>
+    <servlet-class>com.java.team1.travelexperts.Index</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Index</servlet-name>
@@ -22,7 +22,7 @@
     <description></description>
     <display-name>Login</display-name>
     <servlet-name>Login</servlet-name>
-    <servlet-class>Login</servlet-class>
+    <servlet-class>com.java.team1.travelexperts.Login</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Login</servlet-name>
@@ -32,21 +32,11 @@
     <description></description>
     <display-name>Logout</display-name>
     <servlet-name>Logout</servlet-name>
-    <servlet-class>Logout</servlet-class>
+    <servlet-class>com.java.team1.travelexperts.Logout</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Logout</servlet-name>
     <url-pattern>/Logout</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>TravelExperts</display-name>
-    <servlet-name>TravelExperts</servlet-name>
-    <servlet-class>TravelExperts</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>TravelExperts</servlet-name>
-    <url-pattern>/TravelExperts</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>CustomerServlet</servlet-name>

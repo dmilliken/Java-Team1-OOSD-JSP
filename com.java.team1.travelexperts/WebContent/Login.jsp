@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,14 +34,14 @@
        <div class="nav" id="dropmenu">
            <ul>
                <li class="home"><a href="Index"><i class="fa fa-home fa-lg"></i></a></li>
-               <li><a href="packages.php">&nbsp;<i class="fa fa-plane"></i> &nbsp;Vacations&nbsp;</a></li>
+               <li><a href="#">&nbsp;<i class="fa fa-plane"></i> &nbsp;Vacations&nbsp;</a></li>
                  <li><i class='fa fa-sign-in'></i> &nbsp;Login&nbsp;&nbsp;&nbsp;
                      <ul>
                          <li class='active_nav'><a href='Login'><i class='fa fa-sign-in'></i> &nbsp;Login&nbsp;&nbsp;&nbsp;</a></li>
-                         <li class='logout'><a href='logout'><i class='fa fa-sign-out'></i> &nbsp;Logout</a></li>
+                         <li class='logout'><a href='Logout'><i class='fa fa-sign-out'></i> &nbsp;Logout</a></li>
                      </ul>
                  </li>                    
-               <li><a href="contact.php">&nbsp;<i class="fa fa-info-circle"></i> &nbsp;About Us&nbsp;</a></li>
+               <li><a href="#">&nbsp;<i class="fa fa-info-circle"></i> &nbsp;About Us&nbsp;</a></li>
            </ul>
        </div>
        <div class="nav_mobile" onclick="dropMenu('dropmenu');">
@@ -55,25 +54,6 @@
             <h1><strong>Login or Register</strong></h1>
        </div>      
    </div>
-   <div>
-       <a href="#help" class="help"><i class="fa fa-question-circle fa-lg"></i></a>
-   </div>
-   <div>
-       <a href="#lang" class="lang" onclick="dropMenu('flags');"><img src="Images/flags/Canada.png" style="margin-right: 10px;"><i class="fa fa-caret-down"></i></a>
-   </div>
-   <div class="lang_menu" id="flags" onClick="document.getElementById('flags').style.display='none';">
-       <ul>
-           <li><img src="Images/flags/Canada.png"> <strong>EN</strong></li>
-           <li><img src="Images/flags/France.png"> <strong>FR</strong></li>
-           <li><img src="Images/flags/Germany.png"> <strong>GE</strong></li>
-           <li><img src="Images/flags/Japan.png"> <strong>JA</strong></li>
-           <li><img src="Images/flags/China.png"> <strong>CN</strong></li>
-           <li><img src="Images/flags/Brazil.png"> <strong>BP</strong></li>
-           <li><img src="Images/flags/Italy.png"> <strong>IT</strong></li>
-           <li><img src="Images/flags/Russia.png"> <strong>RU</strong></li>
-       </ul>
-   </div>   
-   
    <div class="container-fluid"> <!--- Start of Container --->
             <!--- Main Body begins here --->
             <div id="body">

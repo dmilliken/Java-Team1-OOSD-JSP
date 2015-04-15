@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
 <%!
    private String message;
 %>
@@ -55,7 +54,7 @@
 
 <script>
 	$(function() {
-		$( "#datepicker" ).datepicker();
+		$("#datepicker").datepicker();
 	});
 </script>
 <title>Travel Experts</title>
@@ -70,14 +69,14 @@
        <div class="nav" id="dropmenu">
            <ul>
                <li class="home"><a href="Index"><i class="fa fa-home fa-lg"></i></a></li>
-               <li><a href="packages.php">&nbsp;<i class="fa fa-plane"></i> &nbsp;Vacations&nbsp;</a></li>
-                 <li><i class='fa fa-sign-in'></i> &nbsp;Login&nbsp;&nbsp;&nbsp;
-                     <ul>
-                         <li class='active_nav'><a href='Login'><i class='fa fa-sign-in'></i> &nbsp;Login&nbsp;&nbsp;&nbsp;</a></li>
-                         <li class='logout'><a href='Logout'><i class='fa fa-sign-out'></i> &nbsp;Logout</a></li>
-                     </ul>
-                 </li>                    
-               <li><a href="contact.php">&nbsp;<i class="fa fa-info-circle"></i> &nbsp;About Us&nbsp;</a></li>
+               <li><a href="#">&nbsp;<i class="fa fa-plane"></i> &nbsp;Vacations&nbsp;</a></li>
+               <li><i class='fa fa-sign-in'></i> &nbsp;Login&nbsp;&nbsp;&nbsp;
+                  <ul>
+                    <li class='active_nav'><a href='Login'><i class='fa fa-sign-in'></i> &nbsp;Login&nbsp;&nbsp;&nbsp;</a></li>
+                    <li class='logout'><a href='Logout'><i class='fa fa-sign-out'></i> &nbsp;Logout</a></li>
+                  </ul>
+               </li>                    
+               <li><a href="#">&nbsp;<i class="fa fa-info-circle"></i> &nbsp;About Us&nbsp;</a></li>
            </ul>
        </div>
        <div class="nav_mobile" onclick="dropMenu('dropmenu');">
@@ -90,26 +89,7 @@
             <h1><strong>Your Dream Vacation Starts Here</strong></h1>
        </div>      
    </div>
-   <div>
-       <a href="#help" class="help"><i class="fa fa-question-circle fa-lg"></i></a>
-   </div>
-   <div>
-       <a href="#lang" class="lang" onclick="dropMenu('flags');"><img src="Images/flags/Canada.png" style="margin-right: 10px;"><i class="fa fa-caret-down"></i></a>
-   </div>
-   <div class="lang_menu" id="flags" onClick="document.getElementById('flags').style.display='none';">
-       <ul>
-           <li><img src="Images/flags/Canada.png"> <strong>EN</strong></li>
-           <li><img src="Images/flags/France.png"> <strong>FR</strong></li>
-           <li><img src="Images/flags/Germany.png"> <strong>GE</strong></li>
-           <li><img src="Images/flags/Japan.png"> <strong>JA</strong></li>
-           <li><img src="Images/flags/China.png"> <strong>CN</strong></li>
-           <li><img src="Images/flags/Brazil.png"> <strong>BP</strong></li>
-           <li><img src="Images/flags/Italy.png"> <strong>IT</strong></li>
-           <li><img src="Images/flags/Russia.png"> <strong>RU</strong></li>
-       </ul>
-   </div>
-
-<div class="container-fluid"> <!-- Start of Container -->            
+    <div class="container-fluid"> <!-- Start of Container -->            
 	<div id="body"> <!-- Main body begins here -->
         <div class="row">
             <div class="col-md-12 main_booking" style=" background-size: cover; background-repeat: no-repeat;  width: 100%; height: 100%; background-image:url('Images/main_booking_background.jpg')">
@@ -252,21 +232,21 @@
                         <div class="row">
                             <div class="col-xs-6 col-md-6 main_img_div">
                                 <img src="Images/package5.jpg" class="img-responsive">
-                                <span class="main_img_name">Temples of Myanmar</span><span class="main_img_price"><strong>$3400</strong></span><br><a href="packages.php"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
+                                <span class="main_img_name">Temples of Myanmar</span><span class="main_img_price"><strong>$3400</strong></span><br><a href="#"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
                             </div>
                             <div class="col-xs-6 col-md-6  main_img_div">
                                 <img src="Images/package6.jpg" class="img-responsive">
-                                <span class="main_img_name">Japanese Culture Tour</span><span class="main_img_price"><strong>$5600</strong></span><br><a href="packages.php"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
+                                <span class="main_img_name">Japanese Culture Tour</span><span class="main_img_price"><strong>$5600</strong></span><br><a href="#"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xs-6 col-md-6  main_img_div">
                                 <img src="Images/package7.jpg" class="img-responsive">
-                                <span class="main_img_name">New York Broadway</span><span class="main_img_price"><strong>$550</strong></span><br><a href="packages.php"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
+                                <span class="main_img_name">New York Broadway</span><span class="main_img_price"><strong>$550</strong></span><br><a href="#"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
                             </div>
                             <div class="col-xs-6 col-md-6  main_img_div">
                                 <img src="Images/package10.jpg" class="img-responsive">
-                                <span class="main_img_name">Castles of Scotland</span><span class="main_img_price"><strong>$3750</strong></span><br><a href="packages.php"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
+                                <span class="main_img_name">Castles of Scotland</span><span class="main_img_price"><strong>$3750</strong></span><br><a href="#"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
                             </div>
                         </div>
                     </div>

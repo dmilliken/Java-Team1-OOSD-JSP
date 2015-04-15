@@ -7,17 +7,23 @@ $(document).ready(function() {
     $('table.booking_item').children('tbody').hide();
     
     $('table.booking_item th').click(function() {
+    	$(this).parents('tr.booking_title').children('th').toggleClass('clicked_title');
     	$(this).parents('table.booking_item').children('tbody').toggle();
         $(this).parents('table.booking_item').children('tbody').toggleClass('selected_item');
 	});
 
     $('.print_button').click(function() {
         $('#detail').find('.parent').show();
-        var printContents = document.getElementById('print').innerHTML;
-    	w=window.open();
-    	w.document.write(printContents);
+        $('#detail').find('tr.booking_title').children('th').addClass('clicked_title');
+        //var printContents = document.getElementById('print').innerHTML;
+        var printContents = $('.bookings').html();
+    	w = window.open();
+    	w.document.write('<html><head><link rel="stylesheet" type="text/css" href="css/stylesheet.css" /></head><body style="padding: 30px";>')
+        w.document.write(printContents);
+    	w.document.write('</body></html>')
     	w.print();
     	w.close();
+    	$('#detail').find('tr.booking_title').children('th').removeClass('clicked_title');
     	$('#detail').find('.parent').hide();
     });
 

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1" %>
 <%@ page import="java.util.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -18,6 +18,7 @@
         <script language="javascript" type="text/javascript" src="js/default.js"></script>
         <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/jquery.PrintArea.js_4.js"></script>
         <script type="text/javascript" src="js/jquery.js"></script>
         
         <!-- Stylesheets -->
@@ -33,11 +34,12 @@
     <body>
         <div class="header_wrap">
             <div class="header">
-            <div class="logo"><a href="index.php"><img src="Images/logo.png" class="img-responsive" /></a></div>
+            <div class="logo"><a href="Index"><img src="Images/logo.png" class="img-responsive" /></a></div>
             <div class="nav" id="dropmenu">
                 <ul>
-                    <li class="home"><a href="#"><i class="fa fa-home fa-lg"></i></a></li>
+                    <li class="home"><a href="Index"><i class="fa fa-home fa-lg"></i></a></li>
                     <li><a href="#">&nbsp;<i class="fa fa-plane"></i> &nbsp;Vacations&nbsp;</a></li>
+                    <li class='logout'><a href='Logout'><i class='fa fa-sign-out'></i> &nbsp;Logout</a></li>
                     <li><a href="#">&nbsp;<i class="fa fa-info-circle"></i> &nbsp;About Us&nbsp;</a></li>
                 </ul>
             </div>
@@ -79,7 +81,7 @@
                         </div>    
                         <hr class='style-one' />
                         <div class='previous_bookings'>
-                        <span><h3 style='display: inline;'><i class='fa fa-bookmark-o'></i> &nbsp;<strong>Previous Bookings</strong></h3><span class='print_button' style='float:right; cursor: pointer;'><i class="fa fa-print fa-lg"></i> Print</span>
+                        <span><i class='fa fa-bookmark-o'></i> &nbsp;<h3 style='display: inline;'><strong>Previous Bookings</strong></h3><span class='print_button' style='float:right; cursor: pointer;'><i class="fa fa-print fa-lg"></i> Print</span></span>
 						<table class='sort' id='print'>
                             <thead class='booking_title_main'>
                                 <tr>
@@ -97,8 +99,8 @@
                                     <table class='booking_item' rules='all'>
                                         <thead>
                                           <tr class='booking_title'>
-                                             <th style='width: 18%;'><c:out value="${booking.bookingNo}" /></th>
-                                             <th style='width: 23%;'><c:out value="${booking.bookingDate}" /></th>
+                                             <th style='width: 17%;'><c:out value="${booking.bookingNo}" /></th>
+                                             <th style='width: 23%;'><fmt:formatDate value="${booking.bookingDate}" pattern="MMM dd, yyyy"/></th>
                                              <th style='width: 48%;'><c:out value="${pkg[i.index].pkgName}" /></th>
                                              <th style='width: 3%;'><i class='fa fa-ellipsis-v fa-lg'></i></th>
                                           </tr>
@@ -119,10 +121,10 @@
                                                     <div style='padding-left: 8px;'><c:out value="${pkg[i.index].pkgDesc}" /></div>
                                                   </div>
                                                   <div style='width: 48%; float: left;'>
-                                                    <span><h4 style='display: inline; padding-right: 6px;'><strong>Base Price:</strong></h4><div style='padding-left: 8px;'><fmt:formatNumber type="currency" value="${pkg[i.index].pkgBasePrice}" /></div></span>
+                                                    <span><h4 style='padding-right: 6px;'><strong>Base Price:</strong></h4><div style='padding-left: 8px;'><fmt:formatNumber type="currency" value="${pkg[i.index].pkgBasePrice}" /></div></span>
                                                   </div>
                                                   <div style='width: 48%; float: right;'>
-                                                    <span><h4 style='display: inline; padding-right: 6px;'><strong>Traveller Count:</strong></h4><div style='padding-left: 8px;'><c:out value="${booking.travelerCount}" /></div></span>
+                                                    <span><h4 style='padding-right: 6px;'><strong>Traveller Count:</strong></h4><div style='padding-left: 8px;'><c:out value="${booking.travelerCount}" /></div></span>
                                                   </div>
                                               </td>
                                           </tr>
