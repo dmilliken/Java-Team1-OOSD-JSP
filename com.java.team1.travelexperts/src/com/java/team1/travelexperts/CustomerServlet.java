@@ -41,10 +41,8 @@ public class CustomerServlet extends HttpServlet {
 		if (user == null)
 			user = "143";
 		
-		// To do: Split into two try statements so the customer object is not overwritten with the same information multiple times
 		try {
 			stmt = conn.prepareStatement("SELECT * FROM customers WHERE CustomerId='" + user + "'");
-			//stmt.setInt(1,143);
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
 				c.setCustomerId(rs.getInt("CustomerId"));
@@ -64,13 +62,12 @@ public class CustomerServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		List<Booking> bookingList = new ArrayList<Booking>();
-		List<Package> packageList = new ArrayList<Package>();
+		ArrayList<Booking> bookingList = new ArrayList<Booking>();
+		ArrayList<Package> packageList = new ArrayList<Package>();
 		try {
-			stmt = conn.prepareStatement("SELECT * FROM packages,bookings b,bookingdetails bd WHERE b.BookingId=bd.BookingId AND b.CustomerId='" + user + "'");
-			//stmt.setInt(1,143);
+			stmt = conn.prepareStatement("SELECT * FROM packages p,bookings b,bookingdetails bd WHERE p.PackageId = b.PackageId AND b.BookingId=bd.BookingId AND b.CustomerId='" + user + "'");
 			ResultSet rs = stmt.executeQuery();
-			if (rs.next()) {
+			while (rs.next()) {
 				Booking b = new Booking();
 				Package p = new Package();
 				b.setBookingId(rs.getInt("BookingId"));
@@ -78,13 +75,12 @@ public class CustomerServlet extends HttpServlet {
 				b.setBookingNo(rs.getString("BookingNo"));
 				b.setTravelerCount(rs.getString("TravelerCount"));
 				b.setCustomerId(rs.getInt("CustomerId"));
-				b.setTripTypeId(rs.getString("TripTypeId"));
 				b.setPackageId(rs.getInt("PackageId"));
 				p.setPkgDesc(rs.getString("PkgDesc"));
 				p.setPkgName(rs.getString("PkgName"));
 				p.setPkgStartDate(rs.getDate("PkgStartDate"));
-				p.setPkgEndDate(rs.getDate("PkgStartDate"));
-				p.setPkgName(rs.getString("PkgName"));
+				p.setPkgEndDate(rs.getDate("PkgEndDate"));
+				p.setPkgBasePrice(rs.getBigDecimal("PkgBasePrice"));
 				bookingList.add(b);
 				packageList.add(p);
 			}

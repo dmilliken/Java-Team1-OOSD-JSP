@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.util.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
@@ -8,7 +9,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="description" content="SAIT Fall 2014 Object-Oriented Software Development Project #3 (JAVA, JSP Servlets, jQuery)" />
     <meta name="author" content="John Nguyen" />
-    <title>Travel Experts Inc.</title>
+	<title>Travel Experts Inc.</title>
 	
         <!-- Mobile Specific Meta -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -50,24 +51,6 @@
                  <h1><strong>Profile <i class='fa fa-angle-double-right'></i> ${cust.custFirstName}</strong></h1>
             </div>      
         </div>
-        <div>
-            <a href="#help" class="help"><i class="fa fa-question-circle fa-lg"></i></a>
-        </div>
-        <div>
-            <a href="#lang" class="lang" onclick="dropMenu('flags');"><img src="Images/flags/Canada.png" style="margin-right: 10px;" /><i class="fa fa-caret-down" /></a>
-        </div>
-        <div class="lang_menu" id="flags" onClick="document.getElementById('flags').style.display='none';">
-            <ul>
-                <li><img src="Images/flags/Canada.png" /> <strong>EN</strong></li>
-                <li><img src="Images/flags/France.png" /> <strong>FR</strong></li>
-                <li><img src="Images/flags/Germany.png" /> <strong>GE</strong></li>
-                <li><img src="Images/flags/Japan.png" /> <strong>JA</strong></li>
-                <li><img src="Images/flags/China.png" /> <strong>CN</strong></li>
-                <li><img src="Images/flags/Brazil.png" /> <strong>BP</strong></li>
-                <li><img src="Images/flags/Italy.png" /> <strong>IT</strong></li>
-                <li><img src="Images/flags/Russia.png" /> <strong>RU</strong></li>
-            </ul>
-        </div>
 		<div class='container-fluid'> <!-- Start of Container -->
             <!-- Main body begins here -->
             <div id='body'>
@@ -96,61 +79,60 @@
                         </div>    
                         <hr class='style-one' />
                         <div class='previous_bookings'>
-                        <h3><i class='fa fa-bookmark-o'></i> &nbsp;<strong>Previous Bookings</strong></h3>
-                        <form method="post" name="print" action="Print.jsp">
-						<table class='sort'>
+                        <span><h3 style='display: inline;'><i class='fa fa-bookmark-o'></i> &nbsp;<strong>Previous Bookings</strong></h3><span class='print_button' style='float:right; cursor: pointer;'><i class="fa fa-print fa-lg"></i> Print</span>
+						<table class='sort' id='print'>
                             <thead class='booking_title_main'>
                                 <tr>
-                                    <th style='width: 30%;'><strong>Booking No.</strong></th>
-                                    <th style='width: 65%;'><strong>Package</strong></th>
-                                    <th style='width: 5%;'></th>
+                                    <th style='width: 18%;'><strong>Booking No.</strong></th>
+                                    <th style='width: 23%;'><strong>Booking Date</strong></th>
+                                    <th style='width: 48%;'><strong>Package</strong></th>
+                                    <th style='width: 3%;'></th>
                                 </tr>
                             </thead>
-                            <tbody>
-                            <c:forEach items="${booking}" var="bkng">
-                            	<tr>
-                            		<td><c:out value="${bkng.bookingNo}" /><td>
-		        				</tr>
-		      				</c:forEach>    
+                            <tbody id='detail'>
+                            <fmt:setLocale value="en_US"/>
+                            <c:forEach items="${booking}" var="booking" varStatus="i">
                                 <tr>
-                                    <td colspan='3'>
+                                    <td colspan='4' style='border-bottom: 1px solid #ccc;'>
                                     <table class='booking_item' rules='all'>
                                         <thead>
                                           <tr class='booking_title'>
-                                             <th style='width: 30%;'>${booking[i].bookingNo}</th>
-                                             <th style='width: 65%;'>${pkg[i].pkgName}</th>
-                                             <th style='width: 5%;'><i class='fa fa-ellipsis-v fa-lg'></i></th>
+                                             <th style='width: 18%;'><c:out value="${booking.bookingNo}" /></th>
+                                             <th style='width: 23%;'><c:out value="${booking.bookingDate}" /></th>
+                                             <th style='width: 48%;'><c:out value="${pkg[i.index].pkgName}" /></th>
+                                             <th style='width: 3%;'><i class='fa fa-ellipsis-v fa-lg'></i></th>
                                           </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody class='parent'>
                                           <tr class='booking_details'>
-                                             <td colspan='3'>Deetails</td>
+                                              <td colspan='4'>
+                                                  <div class='booking_details_trip' style='float: left; margin-bottom: 14px; width: 48%;'>
+                                                    <h4><strong>Trip Start:</strong></h4>
+                                                    <div style='font-size: 1.4em; color: red; padding-left: 8px;'><fmt:formatDate value="${pkg[i.index].pkgStartDate}" pattern="MMMM dd, yyyy"/></div>
+                                                  </div>
+                                                  <div class='booking_details_trip' style='float: right; margin-bottom: 14px; width: 48%;'>
+                                                    <h4><strong>Trip End:</strong></h4>
+                                                    <div style='font-size: 1.4em; color: red; padding-left: 8px;'><fmt:formatDate value="${pkg[i.index].pkgEndDate}" pattern="MMMM dd, yyyy"/></div>
+                                                  </div>
+                                                  <div style='clear: both; margin-bottom: 14px;'>
+                                                    <h4><strong>Package Description:</strong></h4>
+                                                    <div style='padding-left: 8px;'><c:out value="${pkg[i.index].pkgDesc}" /></div>
+                                                  </div>
+                                                  <div style='width: 48%; float: left;'>
+                                                    <span><h4 style='display: inline; padding-right: 6px;'><strong>Base Price:</strong></h4><div style='padding-left: 8px;'><fmt:formatNumber type="currency" value="${pkg[i.index].pkgBasePrice}" /></div></span>
+                                                  </div>
+                                                  <div style='width: 48%; float: right;'>
+                                                    <span><h4 style='display: inline; padding-right: 6px;'><strong>Traveller Count:</strong></h4><div style='padding-left: 8px;'><c:out value="${booking.travelerCount}" /></div></span>
+                                                  </div>
+                                              </td>
                                           </tr>
                                         </tbody>
                                     </table>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td colspan='3'>
-                                    <table class='booking_item' rules='all'>
-                                        <thead>
-                                          <tr class='booking_title'>
-                                             <th style='width: 30%;'>${booking[0].bookingNo}</th>
-                                             <th style='width: 65%;'>${pkg[0].pkgName}</th>
-                                             <th style='width: 5%;'><i class='fa fa-ellipsis-v fa-lg'></i></th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          <tr class='booking_details'>
-                                             <td colspan='3'>Deetails</td>
-                                          </tr>
-                                        </tbody>
-                                    </table>
-                                    </td>
-                                </tr>
+                   		    </c:forEach> 
                             </tbody>
-						</table>   
-						</form>     
+						</table>       
                         </div> 
                     </div>
                     <div class='col-xs-12 col-sm-4 customer style'>

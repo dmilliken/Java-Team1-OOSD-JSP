@@ -566,9 +566,6 @@ p.label {
     padding: 10px 10px 12px 10px;
     font-size: 14px;
 }
-/*.current_bookings tr:nth-child(odd), .previous_bookings tr:nth-child(odd) {
-    background-color: #ddd;
-}*/
 
 table.sort {
     border-collapse: collapse;
@@ -579,11 +576,10 @@ table.sort {
 .selected_title {
     background-color: #c1d9ff;
     cursor: pointer;
-    font-weight: bold;
 }
 
 .selected_item {
-    background-color: white;
+    background-color: #fff;
 }
 
 .booking_item {
@@ -595,10 +591,6 @@ table.sort {
     margin: 0;
     width: 100%;   
     padding: 10px 10px 12px 10px;
-}
-
-.booking_details th {
-
 }
 
 .fa-ellipsis-v {
