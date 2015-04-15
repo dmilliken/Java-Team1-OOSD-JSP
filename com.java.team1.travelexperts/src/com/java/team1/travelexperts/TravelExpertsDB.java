@@ -14,7 +14,7 @@ public class TravelExpertsDB {
 		try 
 		{
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/TravelExperts", "root", "");			
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/TravelExperts", "root", "Red_1703");			
 			return conn;
 		} 
 		catch (ClassNotFoundException | SQLException e) 

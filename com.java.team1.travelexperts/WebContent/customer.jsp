@@ -1,6 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" %>
-    
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.util.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
@@ -34,9 +35,9 @@
             <div class="logo"><a href="index.php"><img src="Images/logo.png" class="img-responsive" /></a></div>
             <div class="nav" id="dropmenu">
                 <ul>
-                    <a href="#"><li class="home"><i class="fa fa-home fa-lg"></i></li></a>
-                    <a href="#"><li>&nbsp;<i class="fa fa-plane"></i> &nbsp;Vacations&nbsp;</li></a>
-                    <a href="#"><li>&nbsp;<i class="fa fa-info-circle"></i> &nbsp;About Us&nbsp;</li></a>
+                    <li class="home"><a href="#"><i class="fa fa-home fa-lg"></i></a></li>
+                    <li><a href="#">&nbsp;<i class="fa fa-plane"></i> &nbsp;Vacations&nbsp;</a></li>
+                    <li><a href="#">&nbsp;<i class="fa fa-info-circle"></i> &nbsp;About Us&nbsp;</a></li>
                 </ul>
             </div>
             <div class="nav_mobile" onclick="dropMenu('dropmenu');">
@@ -53,7 +54,7 @@
             <a href="#help" class="help"><i class="fa fa-question-circle fa-lg"></i></a>
         </div>
         <div>
-            <a href="#lang" class="lang" onclick="dropMenu('flags');"><img src="Images/flags/Canada.png" style="margin-right: 10px;"><i class="fa fa-caret-down"></i></a>
+            <a href="#lang" class="lang" onclick="dropMenu('flags');"><img src="Images/flags/Canada.png" style="margin-right: 10px;" /><i class="fa fa-caret-down" /></a>
         </div>
         <div class="lang_menu" id="flags" onClick="document.getElementById('flags').style.display='none';">
             <ul>
@@ -96,6 +97,7 @@
                         <hr class='style-one' />
                         <div class='previous_bookings'>
                         <h3><i class='fa fa-bookmark-o'></i> &nbsp;<strong>Previous Bookings</strong></h3>
+                        <form method="post" name="print" action="Print.jsp">
 						<table class='sort'>
                             <thead class='booking_title_main'>
                                 <tr>
@@ -104,14 +106,19 @@
                                     <th style='width: 5%;'></th>
                                 </tr>
                             </thead>
-                            <tbody>    
+                            <tbody>
+                            <c:forEach items="${booking}" var="bkng">
+                            	<tr>
+                            		<td><c:out value="${bkng.bookingNo}" /><td>
+		        				</tr>
+		      				</c:forEach>    
                                 <tr>
                                     <td colspan='3'>
                                     <table class='booking_item' rules='all'>
                                         <thead>
                                           <tr class='booking_title'>
-                                             <th style='width: 30%;'>${booking.bookingNo}</th>
-                                             <th style='width: 65%;'>${pkg.pkgName}</th>
+                                             <th style='width: 30%;'>${booking[i].bookingNo}</th>
+                                             <th style='width: 65%;'>${pkg[i].pkgName}</th>
                                              <th style='width: 5%;'><i class='fa fa-ellipsis-v fa-lg'></i></th>
                                           </tr>
                                         </thead>
@@ -128,8 +135,8 @@
                                     <table class='booking_item' rules='all'>
                                         <thead>
                                           <tr class='booking_title'>
-                                             <th style='width: 30%;'>${booking.bookingNo}</th>
-                                             <th style='width: 65%;'>${pkg.pkgName}</th>
+                                             <th style='width: 30%;'>${booking[0].bookingNo}</th>
+                                             <th style='width: 65%;'>${pkg[0].pkgName}</th>
                                              <th style='width: 5%;'><i class='fa fa-ellipsis-v fa-lg'></i></th>
                                           </tr>
                                         </thead>
@@ -142,7 +149,8 @@
                                     </td>
                                 </tr>
                             </tbody>
-						</table>        
+						</table>   
+						</form>     
                         </div> 
                     </div>
                     <div class='col-xs-12 col-sm-4 customer style'>
@@ -164,7 +172,7 @@
                             <tr>
                                 <td>&nbsp;<strong>${cust.custPostal} </strong><br><br></td>
                             </tr>
-                            </table>
+                        </table>
                             <table class='book_prof_num'>
                             <tr>
                                 <td style='width: 130px;'><strong>Email:</strong></td>
