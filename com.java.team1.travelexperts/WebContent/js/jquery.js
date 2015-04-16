@@ -1,5 +1,9 @@
 $(document).ready(function() {
 
+	$('.nav_mobile').click(function(){
+		$('.nav').css('display','block');
+	});
+	
     $('table.booking_item thead tr').hover(function() {
         $(this).toggleClass('selected_title');
     });
@@ -15,10 +19,10 @@ $(document).ready(function() {
     $('.print_button').click(function() {
         $('#detail').find('.parent').show();
         $('#detail').find('tr.booking_title').children('th').addClass('clicked_title');
-        //var printContents = document.getElementById('print').innerHTML;
-        var printContents = $('.bookings').html();
+        var printContents = document.getElementById('print').innerHTML;
+        //var printContents = $('.bookings').html();
     	w = window.open();
-    	w.document.write('<html><head><link rel="stylesheet" type="text/css" href="css/stylesheet.css" /></head><body style="padding: 30px";>')
+    	w.document.write('<html><head><link rel="stylesheet" type="text/css" href="css/stylesheet.css" /><link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" /></head><body style="padding: 30px";>')
         w.document.write(printContents);
     	w.document.write('</body></html>')
     	w.print();
