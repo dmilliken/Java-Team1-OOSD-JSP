@@ -56,6 +56,7 @@
             <!-- Main body begins here -->
             <div id='body'>
                     <div class='col-xs-12 col-sm-7 bookings style' style='margin-right: 20px;'>
+                    	<span class='print_button' style='float:right; cursor: pointer;'><i class="fa fa-print fa-lg"></i> Print</span>
                         <div class='current_bookings'>
                             <h3><i class='fa fa-bookmark'></i> &nbsp;<strong>Current Bookings</strong></h3>
                             <table class="sort">
@@ -78,7 +79,7 @@
                         </div>    
                         <hr class='style-one' />
                         <div class='previous_bookings'>
-                        <span><h3 style='display: inline;'><i class='fa fa-bookmark-o'></i> &nbsp;<strong>Previous Bookings</strong></h3><span class='print_button' style='float:right; cursor: pointer;'><i class="fa fa-print fa-lg"></i> Print</span></span>
+                        <h3><i class='fa fa-bookmark-o'></i> &nbsp;<strong>Previous Bookings</strong></h3>
 						<table class='sort' id='print'>
                             <thead class='booking_title_main'>
                                 <tr>
@@ -107,21 +108,21 @@
                                               <td colspan='4'>
                                                   <div class='booking_details_trip' style='float: left; margin-bottom: 14px; width: 48%;'>
                                                     <h4><i class="fa fa-calendar"></i> &nbsp;<strong>Trip Start:</strong></h4>
-                                                    <div style='font-size: 1.4em; color: red; padding-left: 8px;'><fmt:formatDate value="${pkg[i.index].pkgStartDate}" pattern="MMMM dd, yyyy"/></div>
+                                                    <div style='font-size: 1.4em; font-weight: 600; color: red; padding-left: 8px;'><fmt:formatDate value="${pkg[i.index].pkgStartDate}" pattern="MMMM dd, yyyy"/></div>
                                                   </div>
                                                   <div class='booking_details_trip' style='float: right; margin-bottom: 14px; width: 48%;'>
                                                     <h4><i class="fa fa-calendar"></i> &nbsp;<strong>Trip End:</strong></h4>
-                                                    <div style='font-size: 1.4em; color: red; padding-left: 8px;'><fmt:formatDate value="${pkg[i.index].pkgEndDate}" pattern="MMMM dd, yyyy"/></div>
+                                                    <div style='font-size: 1.4em; font-weight: 600; color: red; padding-left: 8px;'><fmt:formatDate value="${pkg[i.index].pkgEndDate}" pattern="MMMM dd, yyyy"/></div>
                                                   </div>
-                                                  <div style='clear: both; margin-bottom: 14px;'>
+                                                  <div style='clear: both;'>
                                                     <h4><i class="fa fa-quote-left"></i> &nbsp;<strong>Description:</strong></h4>
                                                     <div style='padding-left: 8px;'><c:out value="${pkg[i.index].pkgDesc}" /></div>
                                                   </div>
                                                   <div style='width: 48%; float: left;'>
-                                                    <span style='padding-right: 6px;'><h4><i class="fa fa-usd"></i> &nbsp;<strong>Price:</strong></h4><div style='padding-left: 8px; font-size: 1.2em;'><fmt:formatNumber type="currency" value="${pkg[i.index].pkgBasePrice}" /></div></span>
+                                                    <span style='padding-right: 6px;'><h4><i class="fa fa-usd"></i> &nbsp;<strong>Price:</strong></h4><div style='padding-left: 8px; font-weight: 600; font-size: 1.2em;'><fmt:formatNumber type="currency" value="${pkg[i.index].pkgBasePrice}" /></div></span>
                                                   </div>
                                                   <div style='width: 48%; float: right;'>
-                                                    <span style='padding-right: 6px;'><h4><i class="fa fa-users"></i> &nbsp;<strong>Number of Guests:</strong></h4><div style='padding-left: 8px; font-size: 1.2em;'><c:out value="${booking.travelerCount}" /></div></span>
+                                                    <span style='padding-right: 6px;'><h4><i class="fa fa-users"></i> &nbsp;<strong>Number of Guests:</strong></h4><div style='padding-left: 8px; font-weight: 600; font-size: 1.2em;'><c:out value="${booking.travelerCount}" /></div></span>
                                                   </div>
                                               </td>
                                           </tr>

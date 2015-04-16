@@ -65,7 +65,7 @@
 	   </div>
 	   <div class="slider" style="background-image: url(Images/slider01.jpg);"> <!-- Slider Image -->
 	        <div class="welcome">
-	            <h1><strong>Your Dream Vacation Starts Here</strong></h1>
+	            <h1><strong>Your Dream Vacation Starts Here</strong> &nbsp<i class="fa fa-paper-plane"></i></h1>
 	       </div>      
 	   </div>
 	    <div class="container-fluid"> <!-- Start of Container -->            
@@ -86,7 +86,7 @@
 	                            </tr>
 	                            <tr>
 	                                <td colspan="2">
-	                                    <input type="text" class="form-control" id="destination" value="Enter address, city, or airport">
+	                                    <input type="text" class="form-control" id="destination" placeholder="Enter address, city, or airport">
 	                                </td>
 	                            </tr>
 	                            <tr>
@@ -94,7 +94,7 @@
 	                            </tr>
 	                            <tr>
 	                                <td colspan="2">
-	                                    <input type="text" class="form-control" id="destination" value="Enter address, city, or airport">
+	                                    <input type="text" class="form-control" id="destination" placeholder="Enter address, city, or airport">
 	                                </td>
 	                            </tr>
 	                            <tr>
@@ -116,7 +116,8 @@
 	                                </td>
 	                            </tr>
 	                            <tr>
-	                                <td class="search_title" colspan="2">&nbsp;<i class="fa fa-users"></i> &nbsp;Number of Guests</td>
+	                                <td class="search_title">&nbsp;<i class="fa fa-users"></i> &nbsp;Number of Guests</td>
+	                                <td class="search_title">&nbsp;<i class="fa fa-usd"></i> &nbsp;Price Range (per Package)</td>
 	                            </tr>
 	                            <tr>
 	                                <td style="text-align: center;">
@@ -149,21 +150,15 @@
 	                                        <a href="#" class="group">Click here for bookings of 10 or more</a>
 	                                    </div>
 	                                </td>
-	                                <td></td>
-	                            </tr>
-	                            <tr>
-	                                <td class="search_title">&nbsp;<i class="fa fa-usd"></i> &nbsp;Price Range (per Package)</td>
-	                            </tr>
-	                            <tr>
 	                                <td>
-	                                    <select id="pricerange" class="form-control">
+	                                <select id="pricerange" class="form-control">
 	                                        <option value="under1500">Under $1500</option>
 	                                        <option value="1501-3000">$1501 to $3000</option>
 	                                        <option value="3001-5000">$3001 to $5000</option>
 	                                        <option value="5001-7500">$5001 to $7500</option>
 	                                        <option value="over7500">Over $7500</option>
 	                                    </select>
-	                                </td>
+                                   	</td>
 	                            </tr>
 	                            <tr>
 	                                <td colspan="2">
@@ -184,52 +179,46 @@
 	            </div>
 	        </div>
 	        
-	        <div class="row col-xs-12 col-md-12" >
-	            <div class="advertisement">
-	                <a href="#"><img src="Images/banner_ad.png" class="img-responsive"></a>
+	        <div class="row" style="margin-top: 40px;">
+	            <div class="col-xs-12 col-md-4">
+	                <div style="text-align: center;"><i class="fa fa-star-o fa-3x" style="color: #edc800;"></i> <i class="fa fa-star-o fa-3x" style="color: #edc800;"></i> <i class="fa fa-star-o fa-3x" style="color: #edc800;"></i> <i class="fa fa-star-o fa-3x" style="color: #edc800;"></i> <i class="fa fa-star-o fa-3x" style="color: #edc800;"></i><br>
+	                <h2 style="font-weight: 600; font-family: 'Sintony', sans-serif;"><strong>Five-Star Service</strong></h2></div><br>
+	                <strong><i class="fa fa-star"></i> TRIP PLANNING</strong><br>
+	                <p>Our experienced agents will provide you with all the trip planning services you require.</p>
+	                <strong><i class="fa fa-star"></i> PACKAGE BOOKING</strong><br>
+	                <p>Package booking is simple and intuitive with our booking and payment system.</p>
+	                <strong><i class="fa fa-star"></i> CHEAP FLIGHTS</strong><br>
+	                <p>Prices you won't find anywhere else. If you find a competitor with the same price, we'll price match!</p>
+	                <strong><i class="fa fa-star"></i> CARS &amp; HOTELS</strong><br>
+	                <p>Car and hotel bookings are included on some packages to give you ease and peace of mind.</p>
+	                <strong><i class="fa fa-star"></i> POPULAR DESTINATIONS</strong><br>
+	                <p>Popular destinations are added daily so be sure to check back often.</p><br>
+	                <p>The Travel Experts aims to be your discount travel package and booking company. Email us at <a href="#">info@travelexperts.com</a> for more information.</p>
 	            </div>
-	        </div>
-	        
-	        <div class="row">
-	                    <div class="col-xs-12 col-md-4">
-	                        <div style="text-align: center;"><i class="fa fa-star-o fa-3x" style="color: #edc800;"></i> <i class="fa fa-star-o fa-3x" style="color: #edc800;"></i> <i class="fa fa-star-o fa-3x" style="color: #edc800;"></i> <i class="fa fa-star-o fa-3x" style="color: #edc800;"></i> <i class="fa fa-star-o fa-3x" style="color: #edc800;"></i><br>
-	                        <h2 style="font-weight: 600; font-family: 'Sintony', sans-serif;"><strong>Five-Star Service</strong></h2></div><br>
-	                        <strong><i class="fa fa-star"></i> TRIP PLANNING</strong><br>
-	                        <p>Our experienced agents will provide you with all the trip planning services you require.</p>
-	                        <strong><i class="fa fa-star"></i> PACKAGE BOOKING</strong><br>
-	                        <p>Package booking is simple and intuitive with our booking and payment system.</p>
-	                        <strong><i class="fa fa-star"></i> CHEAP FLIGHTS</strong><br>
-	                        <p>Prices you won't find anywhere else. If you find a competitor with the same price, we'll price match!</p>
-	                        <strong><i class="fa fa-star"></i> CARS &amp; HOTELS</strong><br>
-	                        <p>Car and hotel bookings are included on some packages to give you ease and peace of mind.</p>
-	                        <strong><i class="fa fa-star"></i> POPULAR DESTINATIONS</strong><br>
-	                        <p>Popular destinations are added daily so be sure to check back often.</p><br>
-	                        <p>The Travel Experts aims to be your discount travel package and booking company. Email us at <a href="#">info@travelexperts.com</a> for more information.</p>
+	            <div class="col-xs-12 col-md-8 main_img">
+	                <h3><strong>FEATURED PACKAGES</strong></h3>
+	                <div class="row">
+	                    <div class="col-xs-6 col-md-6 main_img_div">
+	                        <img src="Images/package5.jpg" class="img-responsive">
+	                        <span class="main_img_name">Temples of Myanmar</span><span class="main_img_price"><strong>$3400</strong></span><br><a href="#"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
 	                    </div>
-	                    <div class="col-xs-12 col-md-8 main_img">
-	                        <h3><strong>FEATURED PACKAGES</strong></h3>
-	                        <div class="row">
-	                            <div class="col-xs-6 col-md-6 main_img_div">
-	                                <img src="Images/package5.jpg" class="img-responsive">
-	                                <span class="main_img_name">Temples of Myanmar</span><span class="main_img_price"><strong>$3400</strong></span><br><a href="#"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
-	                            </div>
-	                            <div class="col-xs-6 col-md-6  main_img_div">
-	                                <img src="Images/package6.jpg" class="img-responsive">
-	                                <span class="main_img_name">Japanese Culture Tour</span><span class="main_img_price"><strong>$5600</strong></span><br><a href="#"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
-	                            </div>
-	                        </div>
-	                        <div class="row">
-	                            <div class="col-xs-6 col-md-6  main_img_div">
-	                                <img src="Images/package7.jpg" class="img-responsive">
-	                                <span class="main_img_name">New York Broadway</span><span class="main_img_price"><strong>$550</strong></span><br><a href="#"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
-	                            </div>
-	                            <div class="col-xs-6 col-md-6  main_img_div">
-	                                <img src="Images/package10.jpg" class="img-responsive">
-	                                <span class="main_img_name">Castles of Scotland</span><span class="main_img_price"><strong>$3750</strong></span><br><a href="#"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
-	                            </div>
-	                        </div>
+	                    <div class="col-xs-6 col-md-6  main_img_div">
+	                        <img src="Images/package6.jpg" class="img-responsive">
+	                        <span class="main_img_name">Japanese Culture Tour</span><span class="main_img_price"><strong>$5600</strong></span><br><a href="#"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
 	                    </div>
 	                </div>
+	                <div class="row">
+	                    <div class="col-xs-6 col-md-6  main_img_div">
+	                        <img src="Images/package7.jpg" class="img-responsive">
+	                        <span class="main_img_name">New York Broadway</span><span class="main_img_price"><strong>$550</strong></span><br><a href="#"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
+	                    </div>
+	                    <div class="col-xs-6 col-md-6  main_img_div">
+	                        <img src="Images/package10.jpg" class="img-responsive">
+	                        <span class="main_img_name">Castles of Scotland</span><span class="main_img_price"><strong>$3750</strong></span><br><a href="#"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
 		</div> <!-- End of body -->
 		</div> <!-- End of Container -->
         <div class="email">

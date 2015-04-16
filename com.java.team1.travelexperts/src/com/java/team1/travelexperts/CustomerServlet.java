@@ -38,7 +38,7 @@ public class CustomerServlet extends HttpServlet {
 		Customer c = new Customer();
 		String user = (String) request.getAttribute("customerId");
 		if (user == null)
-			user = "143";
+			user = "130";
 		try {
 			stmt = conn.prepareStatement("SELECT * FROM customers WHERE CustomerId='" + user + "'");
 			ResultSet rs = stmt.executeQuery();

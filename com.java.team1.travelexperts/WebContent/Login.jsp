@@ -67,10 +67,10 @@
 							<!-- this from access from user table -->
 	                        <form name="login" method="post" class="form-horizontal" action="Login" >
 	                            <div class="form-group">
-	                                <label for="login_email" class="col-sm-4 control-label">Email</label>
+	                                <label for="login_email" class="col-sm-4 control-label">Username</label>
 	                                <div class="col-sm-8">
-	                                    <input type="text" name="userid" class="form-control" id="login_email"  placeholder="Email Address">
-										<span id="loginemailError" style="display:none">You must enter your Email address.</span>
+	                                    <input type="text" name="userid" class="form-control" id="login_email"  placeholder="Username">
+										<span id="loginemailError" style="display:none">You must enter your Username.</span>
 	                                </div>
 	                            </div>
 	                            <div class="form-group">

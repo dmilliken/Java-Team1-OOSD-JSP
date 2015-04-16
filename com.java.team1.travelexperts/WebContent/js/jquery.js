@@ -19,8 +19,7 @@ $(document).ready(function() {
     $('.print_button').click(function() {
         $('#detail').find('.parent').show();
         $('#detail').find('tr.booking_title').children('th').addClass('clicked_title');
-        var printContents = document.getElementById('print').innerHTML;
-        //var printContents = $('.bookings').html();
+        var printContents = $('.bookings').html();
     	w = window.open();
     	w.document.write('<html><head><link rel="stylesheet" type="text/css" href="css/stylesheet.css" /><link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" /></head><body style="padding: 30px";>')
         w.document.write(printContents);
